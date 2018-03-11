@@ -1,0 +1,56 @@
+﻿<Page
+    x:Class="FERPlusEmotionRecognition.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FERPlusEmotionRecognition"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="Page_Loaded">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <CaptureElement Grid.Column="0" Grid.Row="0" Name="PreviewControl" Stretch="Uniform"/>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">
+            <Button Name="ButtonRun"
+                    FontSize="32"
+                    Click="ButtonRun_Click"
+                    IsEnabled="True"
+                    HorizontalAlignment="Center">
+                <Button.Content>
+                    Recognize
+                </Button.Content>
+            </Button>
+
+            <TextBlock FontWeight="Bold"
+                TextWrapping="Wrap"
+                HorizontalAlignment="Center"
+                Text="Press on the button to take a photo and run it through FERPlusNet!"/>
+        </StackPanel>
+
+        <Image
+            Grid.Column="1"
+            Grid.Row="0"
+            Name="PreviewImage"
+            Stretch="Uniform"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+
+        <TextBlock x:Name="StatusBlock"
+            Grid.Column="1"
+            Grid.Row="1"
+            FontWeight="Bold"
+            TextWrapping="Wrap"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Text=""/>
+    </Grid>
+</Page>
